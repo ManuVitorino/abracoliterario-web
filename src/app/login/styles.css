@@ -1,0 +1,117 @@
+body {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow: hidden;
+  background-color: #ffd8d8e7;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #fdb2b2;
+  border-radius: 30px 30px 0 0;
+  padding: 40px 50px 200px;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-right: 250px;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 25px;
+  margin-bottom: -8px;
+  font-weight: bold;
+  color: #000;
+}
+
+.login-container p {
+  font-size: 14px;
+  color: #843737;
+}
+
+.login-image {
+  width: 100px;
+  margin: 15px 0;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 13px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+}
+
+.link {
+  display: block;
+  font-size: 12px;
+  color: #843737;
+  margin-bottom: 15px;
+  margin-left: 170px;
+  text-decoration: none;
+}
+
+button {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 90%;
+  background-color: #ef5c5c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #db4c4c;
+}
+
+.login-container .nao-tem-conta {
+  font-size: 14px;
+  color: #843737;
+  margin-top: 80px;
+}
+
+.cadastro-btn {
+  background-color: #ef5c5c;
+  margin-top: -5px;
+}
+
+.foto-boneca {
+  width: 300px;
+  margin-right: 200px;
+  margin-bottom: 90px;
+  animation-name: floatAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

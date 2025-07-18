@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - Abraço Literário</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Seja Bem-Vindo</h1>
+      <p>
+        Construindo uma cidadania <br />
+        ativa através da leitura
+      </p>
+      <input type="email" id="email" placeholder="E-mail" />
+      <input type="password" id="senha" placeholder="Senha" />
+
+      <a href="#" class="link">Esqueceu a senha?</a>
+
+      <button onclick="fazerLogin()">Login</button>
+
+      <p class="nao-tem-conta">Não tem conta?</p>
+      <button class="cadastro-btn" onclick="irParaCadastro()">
+        Cadastre-se
+      </button>
+    </div>
+
+    <img src="../../../public/foto-boneca.png" alt="" class="foto-boneca" />
+
+    <script src="script.js"></script>
+  </body>
+</html>
