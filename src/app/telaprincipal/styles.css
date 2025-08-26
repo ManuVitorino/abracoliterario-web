@@ -1,0 +1,135 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Fundo */
+body {
+  background-color: #ffcccc; /* rosa claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.welcome {
+  font-weight: bold;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background: none;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Logo canto direito */
+.logo img {
+  width: 60px;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar button {
+  background-color: #ff7a7a;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #ff4c4c;
+}
+
+/* Livros */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 130px);
+  gap: 15px;
+  flex: 1;
+  justify-content: start;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-card img {
+  width: 110px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.book-card p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left; /* <-- deixa alinhado na lateral da capa */
+  margin-top: 5px; /* espaço entre capa e texto */
+  max-width: 120px; /* controla largura do texto */
+}
+
+/* Rodapé */
+.footer {
+  background-color: #f17070;
+  height: 30px;
+  border-radius: 20px 20px 0 0;
+  margin-top: auto;
+}
