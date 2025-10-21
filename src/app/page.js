@@ -3,93 +3,104 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+    {/* Topo */}
+    <header className={styles.header}>
+      <div className={styles.userSection}>
+        {/* Não tem foto de perfil */}
+        {/* <img src="perfil.jpg" alt="Foto de perfil" className={styles.profilePic} /> */}
+        <span className={styles.welcome}>Oi, Manu!</span>
+        <div className={styles.searchBox}>
+          <input type="text" placeholder="Buscar livros..." />
+          <button>🔍</button>
+        </div>
+      </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <div className={styles.logo}>
+        {/* Colocar logo oficial depois */}
+        {/* <img src="logo.png" alt="Logo Abraço Literário" /> */}
+      </div>
+    </header>
+
+    <div className={styles.container}>
+      {/* Menu lateral */}
+      <aside className={styles.sidebar}>
+        <button>Histórico de Livros</button>
+        <button>Avaliação de Livros</button>
+        <button>Lista de Desejos</button>
+      </aside>
+
+      {/* Grade de livros */}
+      <main className={styles.booksGrid}>
+        <div className={styles.bookCard}>
+          <img
+            src="/as vantagens de ser invisivel.png"
+            alt="As vantagens de Ser Invisível"
+          />
+          <p>As vantagens de Ser Invisível</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img
+            src="/clara dos anjos.png"
+            alt="Clara dos Anjos"
+          />
+          <p>Clara dos Anjos</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img
+            src="/os sete maridos de HG.png"
+            alt="Os Sete Maridos de Evelyn Hugo"
+          />
+          <p>Os Sete Maridos de Evelyn Hugo</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img
+            src="/cancao para ninar menino grande.png"
+            alt="Canção Para Ninar Menino Grande"
+          />
+          <p>Canção Para Ninar Menino Grande</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img
+            src="/Prisioneiro de Azkaban.png"
+            alt="Prisioneiro de Azkaban"
+          />
+          <p>Prisioneiro de Azkaban</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img
+            src="/A Hora da Estrela.png"
+            alt="A Hora da Estrela"
+          />
+          <p>A Hora da Estrela</p>
+        </div>
+        <div className={styles.bookCard}>
+          <img src="/Tudo é Rio.png" alt="Tudo é Rio" />
+          <p>Tudo é Rio</p>
+        </div>
+
+        <div className={styles.bookCard}>
+          <img
+            src="/Não é como nos Filmes.png"
+            alt="Não é como Nos Filmes"
+          />
+          <p>Não é como Nos Filmes</p>
+        </div>
+
+        <div className={styles.bookCard}>
+          <img src="/helena.png" alt="Helena" />
+          <p>Helena</p>
+        </div>
+
+        <div className={styles.bookCard}>
+          <img src="/Olhos D´gua.png" alt="Olhos D´gua" />
+          <p>Olhos D´gua</p>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
+
+    {/* Rodapé */}
+    <footer className={styles.footer}></footer>
+    </>
   );
 }

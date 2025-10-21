@@ -1,0 +1,2 @@
+Criei a pasta "components" em src
+* HTML vai ser o return do page.js
