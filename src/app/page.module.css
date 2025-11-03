@@ -24,7 +24,7 @@ body {
 
 .userSection {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -61,8 +61,9 @@ body {
 }
 
 /* Logo canto direito */
-.logo img {
-  width: 60px;
+.logo img{
+  height: 110px;
+  width: 110px;
 }
 
 /* Layout principal */
@@ -80,7 +81,7 @@ body {
   gap: 10px;
 }
 
-.sidebar button {
+.linksSidebar {
   background-color: #ff7a7a;
   border: none;
   padding: 10px;
@@ -98,10 +99,10 @@ body {
 /* Livros */
 .booksGrid {
   display: grid;
+  width: 80%;
   grid-template-columns: repeat(5, 130px);
-  gap: 15px;
-  flex: 1;
-  justify-content: start;
+  gap: 20px;
+  justify-content:space-around;
 }
 
 .bookCard {

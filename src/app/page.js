@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,16 +19,17 @@ export default function Home() {
 
       <div className={styles.logo}>
         {/* Colocar logo oficial depois */}
-        {/* <img src="logo.png" alt="Logo Abraço Literário" /> */}
+        <img className={styles.logo} src="/logo_abraco_literario.png" alt="Logo Abraço Literário" />
       </div>
     </header>
 
     <div className={styles.container}>
       {/* Menu lateral */}
       <aside className={styles.sidebar}>
-        <button>Histórico de Livros</button>
-        <button>Avaliação de Livros</button>
-        <button>Lista de Desejos</button>
+        <Link href="#" className={styles.linksSidebar}>Histórico de Livros</Link>
+        <Link href="#" className={styles.linksSidebar}>Avaliação de Livros</Link>
+        <Link href="/listadedesejos" className={styles.linksSidebar}>Lista de Desejos</Link>
+        <Link href="/adicionarLivro" className={styles.linksSidebar}>Adicionar Livro</Link>
       </aside>
 
       {/* Grade de livros */}
