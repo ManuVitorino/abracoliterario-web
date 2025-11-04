@@ -1,0 +1,48 @@
+.comment {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #000000;
+}
+
+.secaoFoto {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+
+.fotoUsuario {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.secaoComentario {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+    height: 100%;
+    width: 75%;
+}
+
+.opcoes {
+    cursor: pointer;
+}
+
+.nomeUsuario {
+    font-weight: bold;
+}
+
+.secaoOpcoes {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    width: 5%;
+    padding: 10px;
+}

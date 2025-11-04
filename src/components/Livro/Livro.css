@@ -1,0 +1,48 @@
+.bookFiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    margin-right: 0;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.imgBooks {
+  width: 45%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  margin: 0;
+}
+
+.secao1 {
+    display: flex;
+}
+
+.infoBook {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-right: 20px;
+    background-color: #FFABB8;
+    color: #000000;
+}
+
+.hiddenPDF {
+    display: none;
+}
+
+.pdfButton {
+    background-color: #FD5972;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
