@@ -1,0 +1,32 @@
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.bookCard img {
+  width: 110px;
+  height: 170px;
+  object-fit: fill;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.bookCard img:hover {
+  transform: scale(1.05);
+  border-color: #f17070;
+}
+
+.bookCard p {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-align: left; /* <-- deixa alinhado na lateral da capa */
+  margin-top: 5px; /* espaço entre capa e texto */
+  max-width: 120px; /* controla largura do texto */
+}

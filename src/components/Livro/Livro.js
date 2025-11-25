@@ -1,7 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import './Livro.css'
 
-const Livro = ({imagemLivro, nomeLivro }) => {
+const Livro = ({idLivro, imagemLivro, nomeLivro, descricaoLivro }) => {
   return (
     <div className="bookFiles">
 
@@ -19,8 +20,12 @@ const Livro = ({imagemLivro, nomeLivro }) => {
             className="hiddenPDF"
         ></input>
 
-        <label htmlFor="pdfInput" className="pdfButton"> Livro em PDF 🔗</label>
+        <p className='descriptionBook'>
+            {descricaoLivro}
+        </p>
 
+        <label htmlFor="pdfInput" className="pdfButton"> Livro em PDF 🔗</label>
+    
     </div>
   )
 }

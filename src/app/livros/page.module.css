@@ -1,0 +1,136 @@
+/* Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+} */
+
+/* Fundo */
+body {
+  background-color: #ffcccc; /* rosa claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.userSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profilePic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.welcome {
+  font-weight: bold;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background: none;
+}
+
+.searchBox button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Logo canto direito */
+.logo img{
+  height: 110px;
+  width: 110px;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linksSidebar {
+  background-color: #ff7a7a;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #ff4c4c;
+}
+
+/* Livros */
+.booksGrid {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(5, 130px);
+  gap: 20px;
+  justify-content:space-around;
+}
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookCard img {
+  width: 110px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bookCard p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left; /* <-- deixa alinhado na lateral da capa */
+  margin-top: 5px; /* espaço entre capa e texto */
+  max-width: 120px; /* controla largura do texto */
+}
+
+/* Rodapé */
+.footer {
+  background-color: #f17070;
+  height: 30px;
+  border-radius: 20px 20px 0 0;
+  margin-top: auto;
+}

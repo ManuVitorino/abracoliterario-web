@@ -4,16 +4,19 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function ListaDeDesejos() {
+export default function AdicionarLivro() {
 
   const [titulo, setTitulo] = useState('');
+  const [autor, setAutor] = useState('');
   const [sinopse, setSinopse] = useState('');
   const [capa, setCapa] = useState('');
-  const [pdfLivro, setPdfLivro] = useState('');
-
+  const [arquivoCapa, setArquivoCapa] = useState(null)
+  //const [pdfLivro, setPdfLivro] = useState('');
+  
   const handleCapaUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
+      setArquivoCapa(file);
       const reader = new FileReader();
       reader.onloadend = () => {
         setCapa(reader.result); // Atualiza o estado com a imagem carregada
@@ -21,26 +24,45 @@ export default function ListaDeDesejos() {
       reader.readAsDataURL(file); // Lê o arquivo como uma URL de dados
     }
   };
+  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); 
 
-    const novoLivro = () => {
-        titulo,
-        sinopse,
-        capa,
-        pdfLivro
-    }
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("autor", autor);
+    formData.append("sinopse", sinopse);
+    formData.append("capa", arquivoCapa);
 
-    setNome('');
-    setEmail('');
-    setSenha('');
+    /*const novoLivro = {
+        titulo,
+        autor,
+        sinopse,
+        capa
+        //pdfLivro
+    }*/
+
+    const response = await fetch('/api/livros', { 
+        method: 'POST',
+        body: formData,
+    });
+
+    const data = await response.json();
+    console.log('Livro adicionado com sucesso:', data);
+    alert('Livro adicionado com sucesso!');
+
+    setTitulo('');
+    setAutor('');
+    setSinopse('');
+    setCapa('');
+    setArquivoCapa(null);
   };
 
   return (
     <>
         <div className={styles.header}>
-            <Link href="/" className={styles.backBtn}>←</Link>
+            <Link href="/livros" className={styles.backBtn}>←</Link>
             <h1>Adicionar livros</h1>
         </div>
 
@@ -52,7 +74,7 @@ export default function ListaDeDesejos() {
                 <input 
                     type="file" 
                     id="capaUpload"
-                    name="imagem"
+                    name="capa"
                     accept="image/*"
                     className={styles.capaHidden}
                     onChange={handleCapaUpload}
@@ -75,8 +97,30 @@ export default function ListaDeDesejos() {
 
             </div>
             <div className={styles.bookData}>
-                <input className={styles.nameBook} type="text" placeholder="Adicionar titulo e autor..."></input>
-                <textarea className={styles.sinopseBook} placeholder="Adicionar sinopse..."></textarea>
+                <input 
+                  className={styles.nameBook}
+                  name="titulo"
+                  type="text" 
+                  placeholder="Adicionar titulo"
+                  value={titulo} 
+                  onChange={(e) => setTitulo(e.target.value)}
+                ></input>
+                <input 
+                  className={styles.nameBook}
+                  name="autor"
+                  type="text" 
+                  placeholder="Adicionar autor"
+                  value={autor} 
+                  onChange={(e) => setAutor(e.target.value)}
+                ></input>
+                <textarea 
+                  className={styles.sinopseBook}
+                  name="sinopse" 
+                  placeholder="Adicionar sinopse..."
+                  value={sinopse} 
+                  onChange={(e) => setSinopse(e.target.value)}
+                ></textarea>
+                <button type="submit">Adicionar</button>
             </div>
         </form>
         <div className={styles.footer}></div>
