@@ -149,6 +149,16 @@ body {
     color: #000000;
 }
 
+.crateProject {
+  background-color: #FD5972;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+
 .footer {
   background-color: #f17070;
   height: 20px;

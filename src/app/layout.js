@@ -22,7 +22,7 @@ export const metadata = {
   title: "Abraços Literários",
   description: "Site abraços literários",
   icons: {
-    icon: '/imagem_abraco_literario_HD-removebg 1.png'
+    icon: '/logo_abraco_literario.png'
   }
 };
 

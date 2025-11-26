@@ -6,7 +6,7 @@ body{
     background-color: #ffd8d8e7;
     margin: 0;
     margin-top: 50px;
-    padding: 0;
+    padding: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,7 @@ body{
   margin-left: 150px;
   margin-right: 250px;
   text-align: center;
+  width: 30%;
   gap: 10px;
 }
 
@@ -87,16 +88,28 @@ body{
   margin-top: 80px;
 }
 
-.fotoBoneca {
-  width: 300px;
-  margin-right: 200px;
-  margin-bottom: 90px;
+.secaoLogo {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+
+.logoAbraco {
+  width: 350px;
   animation-name: floatAnimation;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
 }
+
+.texto {
+  font-size: 18px;
+}
+
 
 @keyframes floatAnimation {
   0% {

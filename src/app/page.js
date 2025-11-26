@@ -49,7 +49,7 @@ export default function Login () {
               </Link>
           </form>
 
-          <img src="/foto-boneca.png" alt="" className={styles.fotoBoneca} />
+          <img src="/logo_abraco_literario.png" alt="" className={styles.logoAbraco} />
         </>
     );
 }

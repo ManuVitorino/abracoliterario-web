@@ -120,7 +120,7 @@ export default function AdicionarLivro() {
                   value={sinopse} 
                   onChange={(e) => setSinopse(e.target.value)}
                 ></textarea>
-                <button type="submit">Adicionar</button>
+                <button className={styles.crateProject} type="submit">Adicionar</button>
             </div>
         </form>
         <div className={styles.footer}></div>

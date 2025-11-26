@@ -44,7 +44,12 @@ export default function Cadastro() {
 
             <button className={styles.buttonCad} type="submit">Cadastre-se</button>
         </form>
-            <img src="/foto-boneca.png" alt="Imagem de boneca" className={styles.fotoBoneca} />
+        <div className={styles.secaoLogo}>
+            <h3>Seja bem-vindo!</h3>
+            <p className={styles.texto}>Construindo uma cidadania</p>
+            <p className={styles.texto}>ativa através da leitura!</p>
+            <img src="/logo_abraco_literario.png" alt="Imagem de boneca" className={styles.logoAbraco} />
+        </div>
     </>
   );
 }
