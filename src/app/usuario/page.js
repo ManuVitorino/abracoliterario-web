@@ -1,18 +1,40 @@
 import db from "@/lib/db"
+import styles from "./page.module.css";
+import CardUser from "@/components/CardUser/CardUser";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
+
 export default async () => {
-    const usuarios = await db.query("select * from usuario")
- return (<>
-    <h1>Lista de usuario</h1>
-    <div>
-      {
-         usuarios.rows.map( 
-            a => (
-               <div>
-                  {a.nome} faz parte do projeto {a.cargo}
-               </div>
-            ) 
-         )
-      }
-   </div>
- </>);
+
+   const session = await getServerSession(authOptions);
+   if (!session) redirect("/"); // Tela de login
+
+   if (session.user.role !== "admin") {
+        // Redirecionar para uma página de erro ou home
+        redirect("/nao-autorizado"); 
+    }
+
+   const usuarios = await db.query("select * from usuarios")
+
+   return (
+      <div className={styles.acessarUsuarios}>
+         <header className={styles.header}>
+            <h1>Lista de usuario</h1>
+         </header>
+
+         <main className={styles.listaDeUsuarios}>
+            {
+               usuarios.rows.map(
+                  a => (
+                     <CardUser id={a.id} key={a.nome + 1} nome={a.nome} email={a.email}></CardUser>
+                  )
+               )
+            }
+         </main>
+
+         <footer className={styles.footer}></footer>
+      </div>
+   );
+
 }

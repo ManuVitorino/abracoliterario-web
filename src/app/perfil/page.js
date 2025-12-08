@@ -1,39 +1,35 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
+import LogoutButton from "@/components/LogOut/LogOut";
 
-export default function Perfil() {
-  return (
-    <>
-    {/* Topo */}
-    <header className={styles.header}>
-        <button className={styles.configsProfile}>:</button>
-    </header>
+export default async function Perfil() {
 
-    <main className={styles.dadosGerais}>
-        <div className={styles.informacoes}>
-            <img src="/foto-de-perfil-teste.png" className={styles.foto} alt="Foto de perfil"></img>
-            <p className={styles.nome}>@Maria Joaquina</p>
-            <Link className={styles.editarPerfil} href="#">Editar perfil ⚙️</Link>
-        </div>
-        <div className={styles.acoesLivros}>
-            <div className={styles.acoes1}>
-                <div className={styles.metaLeitura}>
-                    <p>Meta de leitura</p>
-                    <p>{"1/10"}</p>
+    const session = await getServerSession(authOptions);
+    if (!session) redirect("/"); // Tela de login
+
+    return (
+        <div className={styles.perfilContainer}>
+            <header className={styles.header}>
+                <h1>Seu perfil</h1>
+            </header>
+
+            <main className={styles.dadosGerais}>
+                <div className={styles.informacoes}>
+                    <img src="/foto-de-perfil-teste.png" className={styles.foto} alt="Foto de perfil"></img>
+                    <p className={styles.nome}>Nome: {session.user.name}</p>
+                    <p className={styles.nome}>Email: {session.user.email}</p>
+                    <p className={styles.nome}>Função: {session.user.role}</p>
+
+                    <LogoutButton></LogoutButton>
+
                 </div>
-            </div>
-            <div className={styles.acoes1}>
-                <Link className={styles.links} href="#">Histórico de livros</Link>
-                <Link className={styles.links} href="#">Avaliação de livros</Link>
-                <Link className={styles.links} href="#">Lista de desejos</Link>
-            </div>
-            
-        </div>
-    </main>    
+            </main>    
 
-    {/* Rodapé */}
-    <footer className={styles.footer}></footer>
-    </>
-  );
+            <footer className={styles.footer}></footer>
+        </div>
+    );
 }

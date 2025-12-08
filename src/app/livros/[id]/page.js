@@ -8,14 +8,14 @@ export default async function PaginaLivro({ params }) {
 
     const { id } = await params;
 
-    const response = await fetch(`http://localhost:3000/api/livros/${id}`, { 
+    const response = await fetch(`${process.env.NEXTAUTH_URL}/api/livros/${id}`, { //Next_url
         cache: 'no-store' 
     });
 
     const livro = await response.json();
 
     return (
-        <>
+        <div className={styles.pageLivroContainer}>
             <div className={styles.header}>
                 <Link href="/livros" className={styles.backBtn}>←</Link>
                 <h1>Página de livros</h1>
@@ -40,6 +40,6 @@ export default async function PaginaLivro({ params }) {
                 </div>
             </div>
             <div className={styles.footer}></div>
-        </>
+        </div>
     );
 }

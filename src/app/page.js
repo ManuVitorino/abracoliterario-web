@@ -1,33 +1,72 @@
 "use client"
 import styles from "./page.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Login () {
 
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'error'
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (event) => {
-    event.preventDefault(); 
+    const router = useRouter();
 
-    if (email === "" || senha === "") {
-    alert("Por favor, preencha todos os campos.");
-    return;
-  } else {
-    alert("Tentando fazer login...");
-  }
+    const { data: session } = useSession();
+
+    useEffect(() => {
+        // Já está logado
+        if (session) router.replace("/livros");
+    }, [session]);
+
+    const authUsuario = async (email, senha) => {
+
+        // 1. Inicio do loading
+        setStatus('loading');
+        setErrorMessage('');
+
+        const response = await signIn("credentials", {
+            redirect: false,
+            email: email,
+            senha: senha,
+        });
+
+        if (response?.ok) {
+            setStatus('sucess');
+            router.push("/livros");
+            router.refresh();
+        } else {
+            // 2. Define o status de erro
+            setStatus('error');
+            setErrorMessage("Credenciais inválidas. Tente novamente.");
+        }
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (status === 'loading') return;
+
+        if (email === "" || senha === "") {
+            setErrorMessage("Por favor, preencha todos os campos.");
+            setStatus('error');
+            return;
+        }
     
-    // Quando tiver lógica backend:
-    // Ex: realizarCadastro(nome, email, senha);
-    
-    // Limpar o formulário após o sucesso
-    setEmail('');
-    setSenha('');
-  };
+        await authUsuario(email, senha);
+
+    };
+
+    const handleGoogleLogin = () => {
+        if (status === 'loading') return;
+        setStatus('loading'); // Opcional: define o estado de carregamento antes do redirecionamento
+        signIn("google");
+    };
 
     return (
-        <>
+        <div className={styles.pageLoginContainer}>
           <form onSubmit={handleSubmit} className={styles.loginContainer}>
               <h1 className={styles.tituloLog}>Seja Bem-Vindo</h1>
               <p  className={styles.descricaoLog}>
@@ -35,13 +74,33 @@ export default function Login () {
                 ativa através da leitura
               </p>
 
+              {status === 'error' && errorMessage && (
+                <div className={styles.errorMessage}>
+                    {errorMessage}
+                </div>
+              )}
+
               <input className={styles.inputs} type="email" id="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
               <input className={styles.inputs} type="password" id="senha" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
 
               <Link href="#" className={styles.link}>Esqueceu a senha?</Link>
 
-              {/*No futuro deverá direcionar a página livros*/}
-              <button type="submit" className={styles.buttonLog}>Login</button>
+              <button 
+                  type="submit" 
+                  disabled={status === 'loading'} 
+                  className={styles.buttonLog}
+              >
+                 {status === 'loading' ? 'Acessando...' : 'Login'}
+              </button>
+
+              <button 
+                  type="button" 
+                  onClick={handleGoogleLogin} 
+                  className={styles.buttonLog}
+                  disabled={status === 'loading'}
+              >
+                  Continuar com o Google
+              </button>
 
               <p className={styles.naoTemConta}>Não tem conta?</p>
               <Link href="/cadastro" className={styles.linkCadastro}>
@@ -50,6 +109,7 @@ export default function Login () {
           </form>
 
           <img src="/logo_abraco_literario.png" alt="" className={styles.logoAbraco} />
-        </>
+          
+        </div>
     );
 }

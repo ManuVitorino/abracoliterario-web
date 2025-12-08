@@ -1,17 +1,11 @@
-body {
-  font-family: var(--font-hammersmith), sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  overflow: hidden;
-  background-color: #ffd8d8e7;
-  margin: 0;
-  margin-top: 50px;
-  padding: 0;
+.pageLoginContainer {
   display: flex;
+  font-family: var(--font-hammersmith), sans-serif;
+  font-style: normal;
+  background-color: #ffd8d8e7;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
 }
 
 .loginContainer {
@@ -44,6 +38,18 @@ body {
 .login-image {
   width: 100px;
   margin: 15px 0;
+}
+
+.errorMessage {
+  color: #ff0000;
+  background-color: #ffe0e0;
+  border: 1px solid #ff0000;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px; 
 }
 
 .inputs {

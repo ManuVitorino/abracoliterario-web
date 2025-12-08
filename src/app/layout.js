@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Hammersmith_One } from "next/font/google";
 import "./globals.css";
+import AuthProvider from './providers/AuthProvider'; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,10 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} ${hammersmith.variable}`}>
         <header>
         </header>
-        {children}
+          <AuthProvider>
+             {children}
+          </AuthProvider>
+        
       </body>
     </html>
   );

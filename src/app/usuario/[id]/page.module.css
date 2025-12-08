@@ -1,10 +1,9 @@
-.perfilContainer {
+.usuarioContainer {
   background-color: #ffcccc;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 
 .header {
   position: relative;
@@ -98,11 +97,4 @@
     height: 60px;
     width: 100%;
     border-radius: 15px;
-}
-
-.footer {
-  background-color: #FFABB8;
-  height: 30px;
-  border-radius: 20px 20px 0 0;
-  margin-top: auto;
 }
