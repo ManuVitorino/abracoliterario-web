@@ -2,17 +2,30 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 import CardLivro from "@/components/CardLivro/CardLivro";
+import SearchBox from "@/components/SearchBox/SearchBox";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";
 
-export default async function Home() {
+export default async function Home( {searchParams} ) {
 
     const session = await getServerSession(authOptions); 
     if (!session) redirect("/"); // Tela de login
 
-    const livros = await db.query("select * from livro");
+    const params = await searchParams;
+    const q = params.q || "";
+
+    let livros;
+
+    if (q) {
+        livros = await db.query(
+            "SELECT * FROM livro WHERE LOWER(titulo) LIKE LOWER($1)",
+            [`%${q}%`]
+        );
+    } else {
+        livros = await db.query("SELECT * FROM livro");
+    }
 
     const livro = livros.rows;
 
@@ -23,10 +36,9 @@ export default async function Home() {
           <div className={styles.userSection}>
 
             <span className={styles.welcome}>Olá, {session.user.name}!</span>
-            <div className={styles.searchBox}>
-              <input type="text" placeholder="Buscar livros..." />
-              <button>🔍</button>
-            </div>
+
+            <SearchBox></SearchBox>
+
           </div>
 
           <div className={styles.logo}>
