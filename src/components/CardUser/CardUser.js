@@ -3,10 +3,10 @@ import Link from 'next/link'
 import './CardUser.css'
 
 
-const CardUser = ({id, nome, email}) => {
+const CardUser = ({id, nome, email, fotoUrl}) => {
   return (
     <Link href={`/usuario/${id}`} className="cardUser">
-        <img src='/foto-padrao.png' alt='Foto de perfil'></img>
+        <img src={fotoUrl} alt='Foto de perfil'></img>
         <p><strong>Nome: </strong>{`${nome}`}</p>
         <p>{`${email}`}</p>
     </Link>

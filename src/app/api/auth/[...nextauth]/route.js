@@ -8,7 +8,7 @@ import db from "@/lib/db";
 async function getUserByEmail(email) {
   try{
     const result = await db.query(
-      "SELECT id, nome, email, senha, role FROM usuarios WHERE email = $1",
+      "SELECT id, nome, email, senha, role, foto_url FROM usuarios WHERE email = $1",
       [email]
     );
     return result.rows[0] || null;
@@ -44,7 +44,13 @@ const authOptions = {
                 const ok = await compare(senha, user.senha);
                 if (!ok) return null;
                 // O objeto que for retornado vai para o token/session
-                return { id: user.id, name: user.nome, email: user.email, role: user.role };
+                return { 
+                    id: user.id, 
+                    name: user.nome, 
+                    email: user.email, 
+                    role: user.role,
+                    foto_url: user.foto_url
+                };
             }
         })
 
@@ -65,14 +71,18 @@ const authOptions = {
                     token.role = existing.role;
                     token.id = existing.id;
                     token.name = existing.nome;
+                    token.foto_url = existing.foto_url;
                 } else {
+                    const fotoPadrao = profile.picture || "https://aqwzkvq0zraom5bg.public.blob.vercel-storage.com/foto-padrao.png";
                     // Exemplo: cria como "cliente"
                     const res = await db.query(
-                        "INSERT INTO usuarios (nome, email, role) VALUES ($1, $2, $3) RETURNING id, role",
-                        [profile.name ?? "Usuário", profile.email, "cliente"]
+                        "INSERT INTO usuarios (nome, email, role, foto_url) VALUES ($1, $2, $3, $4) RETURNING id, role, foto_url, nome",
+                        [profile.name ?? "Usuário", profile.email, "cliente", fotoPadrao]
                     );
                     token.id = res.rows[0].id;
                     token.role = res.rows[0].role;
+                    token.foto_url = res.rows[0].foto_url;
+                    token.name = res.rows[0].nome;
                 }
             }
 
@@ -80,6 +90,7 @@ const authOptions = {
                 token.id = user.id;
                 token.role = user.role;
                 token.name = user.name;
+                token.foto_url = user.foto_url;
             }
             return token;
         },
@@ -89,6 +100,7 @@ const authOptions = {
                 session.user.id = token.id;
                 session.user.role = token.role;
                 session.user.name = token.name ?? session.user.name;
+                session.user.foto_url = token.foto_url;
             }
             return session;
         }

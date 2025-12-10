@@ -21,7 +21,7 @@ export default async ({params}) => {
 
             <main className={styles.dadosGerais}>
                 <div className={styles.informacoes}>
-                    <img src="/foto-padrao.png" className={styles.foto} alt="Foto de perfil"></img>
+                    <img src={usuario.foto_url} className={styles.foto} alt="Foto de perfil"></img>
                     <p className={styles.nome}>{usuario.nome}</p>
                     <p className={styles.nome}>{usuario.email}</p>
                     <button className={styles.excluirUser}>Excluir usuário</button>

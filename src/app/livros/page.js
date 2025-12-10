@@ -35,7 +35,7 @@ export default async function Home( {searchParams} ) {
         <header className={styles.header}>
           <div className={styles.userSection}>
 
-            <img src="/foto-padrao.png" className={styles.profilePic} alt="Foto de perfil"></img>
+            <img src={session.user.foto_url} className={styles.profilePic} alt="Foto de perfil"></img>
 
             <div className={styles.boxAndWelcome}>
                 <span className={styles.welcome}>Olá, {session.user.name}!</span>

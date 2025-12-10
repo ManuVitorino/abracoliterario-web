@@ -19,7 +19,7 @@ export default function Cadastro() {
 
       if(response.ok) {
           alert("Cadastro realizado com sucesso!");
-          router.push("/login");
+          router.push("/");
       } else {
           alert("Erro ao cadastrar cliente!");
       }

@@ -29,10 +29,12 @@ export async function POST(request) {
     //Criptografia da senha 
     const senhaHash = await bcrypt.hash(senha, 12); // custo 12 é bom, como visto a
 
+    const fotoPadrao = "https://aqwzkvq0zraom5bg.public.blob.vercel-storage.com/foto-padrao.png"
+
     //Cadastrando novo usuário
     await db.query(
-      "INSERT INTO usuarios (nome, email, senha, role) VALUES ($1, $2, $3, $4)",
-      [nome, email, senhaHash, role]
+      "INSERT INTO usuarios (nome, email, senha, role, foto_url) VALUES ($1, $2, $3, $4, $5)",
+      [nome, email, senhaHash, role, fotoPadrao]
     );
 
     return NextResponse.json(

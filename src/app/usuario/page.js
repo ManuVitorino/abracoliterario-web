@@ -27,7 +27,7 @@ export default async () => {
             {
                usuarios.rows.map(
                   a => (
-                     <CardUser id={a.id} key={a.nome + 1} nome={a.nome} email={a.email}></CardUser>
+                     <CardUser id={a.id} key={a.nome + 1} nome={a.nome} email={a.email} fotoUrl={a.foto_url}></CardUser>
                   )
                )
             }
