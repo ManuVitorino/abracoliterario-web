@@ -35,9 +35,12 @@ export default async function Home( {searchParams} ) {
         <header className={styles.header}>
           <div className={styles.userSection}>
 
-            <span className={styles.welcome}>Olá, {session.user.name}!</span>
+            <img src="/foto-padrao.png" className={styles.profilePic} alt="Foto de perfil"></img>
 
-            <SearchBox></SearchBox>
+            <div className={styles.boxAndWelcome}>
+                <span className={styles.welcome}>Olá, {session.user.name}!</span>
+                <SearchBox></SearchBox>
+            </div>
 
           </div>
 
@@ -69,6 +72,12 @@ export default async function Home( {searchParams} ) {
             ))}
 
           </main>
+
+          {/* Menu lateral */}
+          <aside className={styles.sidebar}>
+
+          </aside>
+
         </div>
 
         <footer className={styles.footer}></footer>

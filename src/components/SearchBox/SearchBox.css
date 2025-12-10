@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   background: white;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 5px 10px;
+  border: 2px solid #FFABB8;
 }
 
 .searchBox input {
@@ -12,9 +13,13 @@
   padding: 5px;
   background: none;
   color: #000000;
+  font-size: 14px;
 }
 
 .searchBox button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;

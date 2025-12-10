@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-default: var(--font-alexandria);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,4 +44,20 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+::-webkit-scrollbar {
+    background: #ffcccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffcccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff7a7a;
+    border-radius: 10px;
+    border: 2px solid #ffcccc;
 }

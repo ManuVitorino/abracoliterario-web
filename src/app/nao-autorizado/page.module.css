@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #ffcccc; /* rosa claro */
+    background-color: #FFCFDB;
     color: #000000;
     text-align: center;
 }
@@ -44,7 +44,7 @@
 .homeLink {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ea5154; /* Azul primário */
+    background-color: #FD5972; /* Azul primário */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -52,5 +52,5 @@
 }
 
 .homeLink:hover {
-    background-color: #f8474a;
+    background-color: #FD5972;
 }

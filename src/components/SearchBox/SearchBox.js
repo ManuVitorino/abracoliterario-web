@@ -26,7 +26,9 @@ export default function SearchBox() {
         placeholder="Buscar livros..."
         defaultValue={q}
       />
-      <button type="submit">🔍</button>
+      <button type="submit">
+          <img src='/lupa-pesquisa.png' alt='Imagem de lupa'></img>
+      </button>
     </form>
   );
 }

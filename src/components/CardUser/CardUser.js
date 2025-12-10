@@ -6,8 +6,9 @@ import './CardUser.css'
 const CardUser = ({id, nome, email}) => {
   return (
     <Link href={`/usuario/${id}`} className="cardUser">
-        <p>{`Nome: ${nome}`}</p>
-        <p>{`Email: ${email}`}</p>
+        <img src='/foto-padrao.png' alt='Foto de perfil'></img>
+        <p><strong>Nome: </strong>{`${nome}`}</p>
+        <p>{`${email}`}</p>
     </Link>
   )
 }

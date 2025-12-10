@@ -15,7 +15,9 @@ const Comentario = ({fotoUsuario, nomeUsuario, comentarioUsuario}) => {
         </div>
 
         <div className="secaoOpcoes">
-            <button className="opcoes">:</button>
+            <button className="opcoes">
+                <img src='/tres-pontos.png' alt='Imagem de três pontos'></img>
+            </button>
         </div>
 
     </div>

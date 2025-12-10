@@ -15,15 +15,16 @@ export default async ({params}) => {
     return (
         <div className={styles.usuarioContainer}>
             <header className={styles.header}>
-                <h1> Pagina do usuario</h1>
+                <h1> Página do usuário</h1>
             </header>
             
 
             <main className={styles.dadosGerais}>
                 <div className={styles.informacoes}>
-                    <img src="/foto-de-perfil-teste.png" className={styles.foto} alt="Foto de perfil"></img>
+                    <img src="/foto-padrao.png" className={styles.foto} alt="Foto de perfil"></img>
                     <p className={styles.nome}>{usuario.nome}</p>
                     <p className={styles.nome}>{usuario.email}</p>
+                    <button className={styles.excluirUser}>Excluir usuário</button>
                 </div>
                 <div className={styles.acoesLivros}>
                     <div className={styles.acoes1}>
@@ -39,7 +40,8 @@ export default async ({params}) => {
                 </div>
             
                 </div>
-            </main>       
+            </main>
+            <div className={styles.footer}></div>
         </div>
     )
 }

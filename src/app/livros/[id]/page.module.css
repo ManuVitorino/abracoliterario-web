@@ -1,7 +1,7 @@
 .pageLivroContainer {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffd8d8e7;
+  background-color: #FFCFDB;
   min-height: 100vh;
 }
 
@@ -53,27 +53,18 @@
     height: 100%;
     width: 40%;
     gap: 20px;
-    padding: 20px;
-    background-color: #f17070;
-}
-
-.footer {
-  background-color: #f17070;
-  height: 20px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+    color: #000000;
 }
 
 .comment {
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-color: #d9d9d9;
     border-radius: 10px;
     font-size: 15px;
     color: #000000;
+    padding: 20px;
 }
 
 .fotoUsuario {
@@ -113,4 +104,14 @@
 
 .nomeUsuario {
     font-weight: bold;
+}
+
+.footer {
+  background-color: #FFABB8;
+  height: 30px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

@@ -1,10 +1,21 @@
 .cardUser {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     background-color: #ff7a7a;
     padding: 10px;
-    gap: 5px;
+    gap: 50px;
     border: 1px solid #000000;
     border-radius: 15px;
+    align-items: center;
+}
+
+.cardUser img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.cardUser p {
+    font-size: 18px;
 }

@@ -1,8 +1,10 @@
 .homeContainer {
-  background-color: #ffcccc;
+  background-color: #FFCFDB;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 /* Header */
@@ -15,41 +17,25 @@
 
 .userSection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
 }
 
 .profilePic {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+}
+
+.boxAndWelcome{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .welcome {
   font-weight: bold;
-}
-
-.searchBox {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 20px;
-  padding: 5px 10px;
-}
-
-.searchBox input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  background: none;
   color: #000000;
-}
-
-.searchBox button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 /* Logo canto direito */
@@ -63,7 +49,8 @@
   display: flex;
   flex: 1;
   padding: 20px;
-  gap: 20px;
+  gap: 50px;
+  width: 100%;
 }
 
 /* Sidebar */
@@ -71,30 +58,56 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 15%;
 }
 
 .linksSidebar {
-  background-color: #ff7a7a;
+  background-color: #FFABB8;
   border: none;
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
-  color: white;
+  color: #000000;
+  font-size: 15px;
   font-weight: bold;
   transition: 0.2s;
+  border: 2px solid #FFABB8;
 }
 
 .sidebar button:hover {
-  background-color: #ff4c4c;
+  background-color: #FD5972;
 }
 
 /* Livros */
 .booksGrid {
   display: grid;
-  width: 80%;
+  width: 70%;
   grid-template-columns: repeat(5, 130px);
   gap: 20px;
   justify-content:space-around;
+  flex: 1;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  overflow: auto;
+  max-height: 500px;
+  grid-auto-rows: min-content;
+}
+
+::-webkit-scrollbar {
+    background: #ffcccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffcccc;
+    border-radius: 10px;
+}
+
+/* 3. Estiliza o "Thumb" (a alça que você arrasta) */
+::-webkit-scrollbar-thumb {
+    background-color: #ff7a7a;
+    border-radius: 10px;
+    border: 2px solid #ffcccc;
 }
 
 .bookCard {
@@ -121,7 +134,7 @@
 
 /* Rodapé */
 .footer {
-  background-color: #f17070;
+  background-color: #FFABB8;
   height: 30px;
   border-radius: 20px 20px 0 0;
   margin-top: auto;

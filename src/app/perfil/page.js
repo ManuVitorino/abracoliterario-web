@@ -19,7 +19,7 @@ export default async function Perfil() {
 
             <main className={styles.dadosGerais}>
                 <div className={styles.informacoes}>
-                    <img src="/foto-de-perfil-teste.png" className={styles.foto} alt="Foto de perfil"></img>
+                    <img src="/foto-padrao.png" className={styles.foto} alt="Foto de perfil"></img>
                     <p className={styles.nome}>Nome: {session.user.name}</p>
                     <p className={styles.nome}>Email: {session.user.email}</p>
                     <p className={styles.nome}>Função: {session.user.role}</p>
