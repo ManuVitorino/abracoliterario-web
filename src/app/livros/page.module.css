@@ -1,5 +1,5 @@
 .homeContainer {
-  background-color: #ffcccc;
+  background-color: #FFCFDB;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -74,7 +74,7 @@
 }
 
 .linksSidebar {
-  background-color: #ff7a7a;
+  background-color: #FFABB8;
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -85,7 +85,7 @@
 }
 
 .sidebar button:hover {
-  background-color: #ff4c4c;
+  background-color: #FD5972;
 }
 
 /* Livros */
@@ -121,7 +121,7 @@
 
 /* Rodapé */
 .footer {
-  background-color: #f17070;
+  background-color: #FFABB8;
   height: 30px;
   border-radius: 20px 20px 0 0;
   margin-top: auto;
