@@ -2,6 +2,7 @@
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #FFCFDB;
+  background-color: #FFCFDB;
   min-height: 100vh;
 }
 
@@ -9,6 +10,7 @@
   position: relative;
   background: linear-gradient(
     to bottom,
+    #FFABB8(241, 112, 112, 0.23),
     #FFABB8(241, 112, 112, 0.23),
     transparent
   );
@@ -19,6 +21,7 @@
 
 .header h1 {
   display: inline-block;
+  background-color: #FFABB8 (241, 112, 112, 0.23);
   background-color: #FFABB8 (241, 112, 112, 0.23);
   padding: 10px 20px;
   border-radius: 20px;
