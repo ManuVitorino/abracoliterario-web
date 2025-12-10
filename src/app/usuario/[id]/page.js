@@ -1,6 +1,7 @@
 import db from "@/lib/db";
 import styles from './page.module.css'
 import Link from "next/link";
+import { DeleteUser } from "@/components/DeleteUser/DeleteUser";
 
 export default async ({params}) => {
 
@@ -24,7 +25,9 @@ export default async ({params}) => {
                     <img src={usuario.foto_url} className={styles.foto} alt="Foto de perfil"></img>
                     <p className={styles.nome}>{usuario.nome}</p>
                     <p className={styles.nome}>{usuario.email}</p>
-                    <button className={styles.excluirUser}>Excluir usuário</button>
+                    
+                    <DeleteUser userId={usuario.id}></DeleteUser>
+
                 </div>
                 <div className={styles.acoesLivros}>
                     <div className={styles.acoes1}>

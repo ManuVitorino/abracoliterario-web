@@ -1,0 +1,10 @@
+.excluirUser {
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fc3250;
+    cursor: pointer;
+}
