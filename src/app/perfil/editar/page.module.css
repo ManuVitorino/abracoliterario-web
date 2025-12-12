@@ -1,13 +1,19 @@
-.acessarUsuarios {
-  margin: 0;
-  font-family: var(--font-alexandria);
+.perfilContainer {
   background-color: #FFCFDB;
+  font-family: var(--font-alexandria);
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 .header {
   position: relative;
-  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    #FFABB8,
+    transparent
+  );
+  height: 130px;
   text-align: center;
   padding-top: 30px;
 }
@@ -27,29 +33,13 @@
   top: 20px;
   left: 20px;
   font-size: 20px;
-  background: none;
-  border: none;
+  color: #000;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  color: #000000;
-}
-
-.listaDeUsuarios {
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    gap: 25px;
-    height: 100%;
-    width: 100%;
 }
 
 .footer {
   background-color: #FFABB8;
   height: 30px;
-  width: 100%;
   border-radius: 20px 20px 0 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top: auto;
 }

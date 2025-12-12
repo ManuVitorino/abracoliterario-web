@@ -1,6 +1,7 @@
 .excluirUser {
     height: 40px;
     width: 100px;
+    font-family: var(--font-alexandria);
     font-size: 14px;
     padding: 0 15px;
     border: none;

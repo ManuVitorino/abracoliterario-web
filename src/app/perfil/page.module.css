@@ -1,10 +1,10 @@
 .perfilContainer {
   background-color: #FFCFDB;
+  font-family: var(--font-alexandria);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 
 .header {
   position: relative;
@@ -20,11 +20,24 @@
 
 .header h1 {
   display: inline-block;
-  background-color: #FFABB8(241, 112, 112, 0.23);
+  background-color: #FFABB8;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 18px;
   font-weight: bold;
+  color: #000000;
+}
+
+.backBtn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
   color: #000000;
 }
 
@@ -54,6 +67,22 @@
     font-size: 15px;
     font-weight: bold;
     color: #000000;
+}
+
+.linkEditar {
+    display: flex;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    font-family: var(--font-alexandria);
 }
 
 .editarPerfil {

@@ -5,6 +5,7 @@
   border-radius: 10px;
   padding: 5px 10px;
   border: 2px solid #FFABB8;
+  font-family: var(--font-alexandria);
 }
 
 .searchBox input {

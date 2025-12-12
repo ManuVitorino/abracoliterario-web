@@ -92,6 +92,21 @@ const authOptions = {
                 token.name = user.name;
                 token.foto_url = user.foto_url;
             }
+
+            /* Re-busca */
+            if (token.id) {
+                const latestUser = await getUserByEmail(token.email); 
+                // Usamos o email do token para buscar no banco
+                
+                if (latestUser) {
+                    // Atualiza o token com os dados mais recentes do banco
+                    token.name = latestUser.nome;
+                    token.foto_url = latestUser.foto_url;
+                    token.role = latestUser.role; // (Garante que a role está atualizada também)
+                    // Não é necessário atualizar token.id, pois ele não muda
+                }
+            }
+
             return token;
         },
         // É necessário para coloca dados úteis na sessão (disponível no cliente)

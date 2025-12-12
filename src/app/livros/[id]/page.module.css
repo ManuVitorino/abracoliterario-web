@@ -1,6 +1,6 @@
 .pageLivroContainer {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-alexandria);
   background-color: #FFCFDB;
   min-height: 100vh;
 }
@@ -19,7 +19,8 @@
 
 .header h1 {
   display: inline-block;
-  background-color: rgba(241, 112, 112, 0.23);
+  font-family: var(--font-alexandria);
+  background-color: #FFABB8;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 18px;
@@ -49,6 +50,7 @@
 
 .commentsBooks {
     display: flex;
+    font-family: var(--font-alexandria);
     flex-direction: column;
     height: 100%;
     width: 40%;
@@ -61,6 +63,7 @@
     width: 100%;
     height: 80px;
     background-color: #d9d9d9;
+    font-family: var(--font-alexandria);
     border-radius: 10px;
     font-size: 15px;
     color: #000000;

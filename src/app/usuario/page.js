@@ -1,5 +1,6 @@
 import db from "@/lib/db"
 import styles from "./page.module.css";
+import Link from "next/link";
 import CardUser from "@/components/CardUser/CardUser";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
@@ -20,7 +21,8 @@ export default async () => {
    return (
       <div className={styles.acessarUsuarios}>
          <header className={styles.header}>
-            <h1>Lista de usuario</h1>
+            <Link href="/livros" className={styles.backBtn}>←</Link>
+            <h1>Lista de usuários</h1>
          </header>
 
          <main className={styles.listaDeUsuarios}>

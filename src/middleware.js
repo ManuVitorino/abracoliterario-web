@@ -43,7 +43,7 @@ export const config = {
         "/livros/:path*",
         "/usuario",
         "/usuario/:path*",
-        "/perfil",
+        "/perfil/:path*",
         "/adicionarLivro",
         "/nao-autorizado"
     ],

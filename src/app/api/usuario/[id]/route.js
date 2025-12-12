@@ -58,7 +58,8 @@ export async function DELETE(req, { params }) {
 
 export async function PUT(req, { params }) {
   try {
-    const { id } = params;
+
+    const id = params.id;
 
     const formData = await req.formData();
     const nome = formData.get("nome");
@@ -67,10 +68,14 @@ export async function PUT(req, { params }) {
     let foto_url = null;
 
     if (arquivoFoto && arquivoFoto.size > 0) {
+
       const filename = `foto_${nome.toLowerCase().replace(/[^a-z0-9]/g, '-')}_${Date.now()}.${arquivoFoto.name.split('.').pop()}`;
-      const blob = await writeBlob(arquivoFoto, { access: "public", name: filename });
+
+      const blob = await put(filename, arquivoFoto, { access: "public" });
+
       foto_url = blob.url;
       console.log("URL da foto gerada:", foto_url);
+
     }
 
     const existe = await db.query("SELECT * FROM usuarios WHERE id = $1", [id]);

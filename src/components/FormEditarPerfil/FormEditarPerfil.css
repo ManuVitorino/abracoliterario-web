@@ -1,0 +1,66 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.fotoUpload {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  background-image: url('/foto-padrao.png'); /* imagem padrão */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputHidden {
+  display: none;
+}
+
+.plusSign {
+  font-size: 50px;
+  color: #b1b1b1;
+  position: absolute;
+}
+
+.previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inputTexto {
+  width: 30%;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-family: var(--font-alexandria);
+  font-size: 16px;
+  color: #000000;
+}
+
+.inputTexto::placeholder {
+  color: #636363;
+}
+
+.salvarBtn {
+  background-color: #FD5972;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  margin-top: 10px;
+}

@@ -16,6 +16,7 @@ export default async ({params}) => {
     return (
         <div className={styles.usuarioContainer}>
             <header className={styles.header}>
+                <Link href="/usuario" className={styles.backBtn}>←</Link>
                 <h1> Página do usuário</h1>
             </header>
             

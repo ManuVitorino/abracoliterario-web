@@ -1,7 +1,6 @@
 .adicionarLivroContainer {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #FFCFDB;
+  font-family: var(--font-alexandria);
   background-color: #FFCFDB;
   min-height: 100vh;
 }
@@ -10,7 +9,6 @@
   position: relative;
   background: linear-gradient(
     to bottom,
-    #FFABB8(241, 112, 112, 0.23),
     #FFABB8(241, 112, 112, 0.23),
     transparent
   );
@@ -21,8 +19,7 @@
 
 .header h1 {
   display: inline-block;
-  background-color: #FFABB8 (241, 112, 112, 0.23);
-  background-color: #FFABB8 (241, 112, 112, 0.23);
+  background-color: #FFABB8;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 18px;
@@ -53,6 +50,7 @@
 .bookFiles {
     display: flex;
     flex-direction: column;
+    font-family: var(--font-alexandria);
     align-items: center;
     height: 100%;
     width: 40%;
@@ -62,6 +60,7 @@
 .bookData {
     display: flex;
     flex-direction: column;
+    font-family: var(--font-alexandria);
     height: 100%;
     width: 60%;
     gap: 20px;
@@ -137,9 +136,13 @@
     border: 1px solid black;
     border-radius: 5px;
     padding-left: 15px;
+    font-family: var(--font-alexandria);
     font-size: 16px;
     background-color: #FFABB8;
     color: #000000;
+}
+.nameBook::placeholder {
+    color: rgb(67, 67, 67)
 }
 .sinopseBook {
     display: flex;
@@ -148,6 +151,7 @@
     border: 1px solid black;
     border-radius: 5px;
     padding-left: 15px;
+    font-family: var(--font-alexandria);
     font-size: 16px;
     background-color: #ffffff;
     color: #000000;
@@ -158,6 +162,7 @@
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 8px;
+  font-family: var(--font-alexandria);
   font-size: 15px;
   cursor: pointer;
   border: 1px solid #000000;

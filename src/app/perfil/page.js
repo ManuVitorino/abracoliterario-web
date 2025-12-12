@@ -14,6 +14,7 @@ export default async function Perfil() {
     return (
         <div className={styles.perfilContainer}>
             <header className={styles.header}>
+                <Link href="/livros" className={styles.backBtn}>←</Link>
                 <h1>Seu perfil</h1>
             </header>
 
@@ -23,6 +24,8 @@ export default async function Perfil() {
                     <p className={styles.nome}>Nome: {session.user.name}</p>
                     <p className={styles.nome}>Email: {session.user.email}</p>
                     <p className={styles.nome}>Função: {session.user.role}</p>
+
+                    <Link href="/perfil/editar" className={styles.linkEditar}>Editar perfil</Link>
 
                     <LogoutButton></LogoutButton>
 

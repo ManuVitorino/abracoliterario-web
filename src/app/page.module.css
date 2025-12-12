@@ -1,8 +1,8 @@
 .pageLoginContainer {
   display: flex;
-  font-family: var(--font-hammersmith), sans-serif;
   font-style: normal;
   background-color: #FFCFDB;
+  font-family: var(--font-alexandria);
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -14,6 +14,7 @@
   align-items: center;
   text-align: center;
   background-color: #fdb2b2;
+  font-family: var(--font-alexandria);
   border-radius: 30px 30px 0 0;
   padding: 40px 50px 200px;
   margin-top: 100px;
@@ -26,12 +27,14 @@
 .tituloLog {
   font-size: 25px;
   margin-bottom: -8px;
+  font-family: var(--font-alexandria);
   font-weight: bold;
   color: #000000;
 }
 
 .descricaoLog {
   font-size: 14px;
+  font-family: var(--font-alexandria);
   color: #843737;
 }
 
@@ -44,6 +47,7 @@
   color: #ff0000;
   background-color: #ffe0e0;
   border: 1px solid #ff0000;
+  font-family: var(--font-alexandria);
   padding: 8px 12px;
   border-radius: 5px;
   width: 90%;
@@ -59,9 +63,9 @@
   border: none;
   border-radius: 20px;
   font-size: 14px;
-  font-family: var(--font-hammersmith), sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-family: var(--font-alexandria);
   background-color: #ffffff;
   color: #000000;
 }
@@ -69,6 +73,7 @@
 .link {
   display: block;
   font-size: 12px;
+  font-family: var(--font-alexandria);
   color: #843737;
   margin-bottom: 15px;
   margin-left: 170px;
@@ -76,10 +81,10 @@
 }
 
 .buttonLog {
-  font-family: var(--font-hammersmith), sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 90%;
+  font-family: var(--font-alexandria);
   background-color: #ef5c5c;
   color: white;
   border: none;
@@ -97,14 +102,15 @@
 .naoTemConta {
   font-size: 14px;
   color: #843737;
+  font-family: var(--font-alexandria);
   margin-top: 80px;
 }
 
 .linkCadastro{
-  font-family: var(--font-hammersmith), sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 90%;
+  font-family: var(--font-alexandria);
   background-color: #ef5c5c;
   color: white;
   border: none;
