@@ -52,13 +52,13 @@ export default async function Home( {searchParams} ) {
         </header>
 
         <div className={styles.container}>
-          
+          s
           {/* Menu lateral */}
           <aside className={styles.sidebar}>
 
             <Link href="/adicionarLivro" className={styles.linksSidebar}>Adicionar livro</Link>
 
-            <Link href="/usuario" className={styles.linksSidebar}>Acessar usuarios</Link>
+            <Link href="/usuario" className={styles.linksSidebar}>Acessar usuários</Link>
 
             <Link href="/perfil" className={styles.linksSidebar}>Seu perfil</Link>
 

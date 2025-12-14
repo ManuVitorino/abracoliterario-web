@@ -63,7 +63,8 @@ const authOptions = {
         // Vamos colocar role e id no JWT para informar os papeis do usuário
         async jwt({ token, user, account, profile }) {
             // Primeira vez que loga por OAuth
-            if (account && profile && !user) {
+            // Antes era: if (account && profile && !user)
+            if (account?.provider === "google") {
                 // É precio vincular ou auto-criar um usuário no banco (opcional)
                 const existing = await getUserByEmail(profile.email);
                 
