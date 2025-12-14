@@ -98,23 +98,6 @@
   grid-auto-rows: min-content;
 }
 
-::-webkit-scrollbar {
-    background: #ffcccc;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #ffcccc;
-    border-radius: 10px;
-}
-
-/* 3. Estiliza o "Thumb" (a alça que você arrasta) */
-::-webkit-scrollbar-thumb {
-    background-color: #ff7a7a;
-    border-radius: 10px;
-    border: 2px solid #ffcccc;
-}
-
 .bookCard {
   display: flex;
   flex-direction: column;
