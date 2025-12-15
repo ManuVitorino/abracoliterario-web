@@ -109,7 +109,7 @@ export default function Login () {
               </Link>
           </form>
 
-          <img 
+          <Image 
             src="/logo_abraco_literario.png" 
             alt="Logo abraço literário" 
             className={styles.logoAbraco}

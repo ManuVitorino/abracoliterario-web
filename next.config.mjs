@@ -1,10 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {// Permitindo imagens de domínio externo
+    // Permitindo imagens de domínio externo
+    images: {
     remotePatterns: [
-      {
+      { //Imagens do vercel blob
+        protocol: 'https',
         hostname: 'aqwzkvq0zraom5bg.public.blob.vercel-storage.com',
-        protocol: 'https', 
+        pathname: '**', 
+      },
+      { //Imagens do Google
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '**',
       },
     ],
   },
