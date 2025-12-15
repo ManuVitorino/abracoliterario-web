@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import './Livro.css'
 
 const Livro = ({idLivro, imagemLivro, nomeLivro, descricaoLivro }) => {
@@ -7,7 +8,7 @@ const Livro = ({idLivro, imagemLivro, nomeLivro, descricaoLivro }) => {
     <div className="bookFiles">
 
         <div className="secao1">
-            <img src={`${imagemLivro}`} alt={`Capa do livro ${nomeLivro}`} className="imgBooks"></img>
+            <Image src={`${imagemLivro}`} alt={`Capa do livro ${nomeLivro}`} className="imgBooks" height={250} width={170}></Image>
                   
             <div className="infoBook">{nomeLivro}</div>
         </div> 

@@ -35,7 +35,13 @@ export default async function Home( {searchParams} ) {
         <header className={styles.header}>
           <div className={styles.userSection}>
 
-            <img src={session.user.foto_url} className={styles.profilePic} alt="Foto de perfil"></img>
+            <Image 
+                src={session.user.foto_url} 
+                className={styles.profilePic} 
+                alt="Foto de perfil"
+                width={45}
+                height={45}
+            ></Image>
 
             <div className={styles.boxAndWelcome}>
                 <span className={styles.welcome}>Olá, {session.user.name}!</span>
@@ -45,8 +51,15 @@ export default async function Home( {searchParams} ) {
           </div>
 
           <div className={styles.logo}>
-            {/* Colocar logo oficial depois */}
-            <img className={styles.logo} src="/logo_abraco_literario.png" alt="Logo Abraço Literário" />
+
+            <Image
+                className={styles.logo} 
+                src="/logo_abraco_literario.png" 
+                alt="Logo Abraço Literário"
+                width={110}
+                height={110}
+            />
+
           </div>
 
         </header>

@@ -71,7 +71,7 @@ const FormAddLivro = () => {
                     ></input>
 
                     <span className="prewiewCapa">{capa ? "" : "+"}</span>
-                    {capa && <img src={capa} alt="Uploaded" />}
+                    {capa && <Image src={capa} alt="Uploaded" fill/>}
                     </label>
 
                     {/*<img src="/A Hora da Estrela.png" alt="Capa do livro" className={styles.imgBooks}></img>*/}

@@ -1,8 +1,11 @@
 import { Pool } from 'pg';
 
-export default new Pool({
-connectionString: process.env.POSTGRES_URL,
-ssl: {
-    rejectUnauthorized: false,
-},
+const db = new Pool({
+    connectionString: process.env.POSTGRES_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
+
+// 2. Exporte a variável nomeada
+export default db;

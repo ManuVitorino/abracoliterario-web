@@ -2,6 +2,7 @@
 
 import React from 'react'
 import './FormEditarPerfil.css'
+import Image from 'next/image';
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
@@ -72,7 +73,7 @@ const FormEditarPerfil = ({usuario, userId}) => {
           />
 
           {!foto || foto && <span className="plusSign">+</span>}
-          {foto && <img src={foto} alt="Preview" className="previewImg" />}
+          {foto && <Image src={foto} alt="Preview" className="previewImg" fill/>}
         </label>
 
         <input 

@@ -102,6 +102,7 @@
 
 .logoAbraco {
   width: 350px;
+  height: 350px;
   animation-name: floatAnimation;
   animation-duration: 3s;
   animation-iteration-count: infinite;

@@ -69,7 +69,13 @@ export default function Cadastro() {
             <h3>Seja bem-vindo!</h3>
             <p className={styles.texto}>Construindo uma cidadania</p>
             <p className={styles.texto}>ativa através da leitura!</p>
-            <img src="/logo_abraco_literario.png" alt="Imagem de boneca" className={styles.logoAbraco} />
+            <Image 
+                src="/logo_abraco_literario.png" 
+                alt="Imagem de boneca" 
+                className={styles.logoAbraco}
+                width={350}
+                height={350}
+            />
         </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import './SearchBox.css'
+import Image from 'next/image';
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function SearchBox() {
@@ -27,7 +28,7 @@ export default function SearchBox() {
         defaultValue={q}
       />
       <button type="submit">
-          <img src='/lupa-pesquisa.png' alt='Imagem de lupa'></img>
+          <Image src='/lupa-pesquisa.png' alt='Imagem de lupa' height={25} width={25}></Image>
       </button>
     </form>
   );

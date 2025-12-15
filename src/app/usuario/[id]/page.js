@@ -1,9 +1,10 @@
 import db from "@/lib/db";
 import styles from './page.module.css'
 import Link from "next/link";
+import Image from "next/image";
 import { DeleteUser } from "@/components/DeleteUser/DeleteUser";
 
-export default async ({params}) => {
+export default async function UsuarioPage ({params}) {
 
     const { id } = await params;
 
@@ -23,7 +24,13 @@ export default async ({params}) => {
 
             <main className={styles.dadosGerais}>
                 <div className={styles.informacoes}>
-                    <img src={usuario.foto_url} className={styles.foto} alt="Foto de perfil"></img>
+                    <Image 
+                        src={usuario.foto_url} 
+                        className={styles.foto} 
+                        alt="Foto de perfil"
+                        width={150}
+                        height={150}
+                    ></Image>
                     <p className={styles.nome}>{usuario.nome}</p>
                     <p className={styles.nome}>{usuario.email}</p>
                     

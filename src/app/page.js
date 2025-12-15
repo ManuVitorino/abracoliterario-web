@@ -1,5 +1,6 @@
 "use client"
 import styles from "./page.module.css";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -19,7 +20,7 @@ export default function Login () {
     useEffect(() => {
         // Já está logado
         if (session) router.replace("/livros");
-    }, [session]);
+    }, [session, router]);
 
     const authUsuario = async (email, senha) => {
 
@@ -108,7 +109,13 @@ export default function Login () {
               </Link>
           </form>
 
-          <img src="/logo_abraco_literario.png" alt="" className={styles.logoAbraco} />
+          <img 
+            src="/logo_abraco_literario.png" 
+            alt="Logo abraço literário" 
+            className={styles.logoAbraco}
+            width={350}
+            height={350}
+          />
           
         </div>
     );

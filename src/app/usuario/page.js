@@ -1,12 +1,13 @@
 import db from "@/lib/db"
 import styles from "./page.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import CardUser from "@/components/CardUser/CardUser";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
-export default async () => {
+export default async function UsuariosPage () {
 
    const session = await getServerSession(authOptions);
    if (!session) redirect("/"); // Tela de login

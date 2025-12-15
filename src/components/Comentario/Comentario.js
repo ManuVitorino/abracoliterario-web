@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import './Comentario.css'
 
 const Comentario = ({fotoUsuario, nomeUsuario, comentarioUsuario}) => {
@@ -6,7 +7,13 @@ const Comentario = ({fotoUsuario, nomeUsuario, comentarioUsuario}) => {
     <div className="comment">
 
         <div className="secaoFoto">
-            <img src={`${fotoUsuario}`} className="fotoUsuario"></img>
+            <Image 
+                src={`${fotoUsuario}`} 
+                className="fotoUsuario" 
+                alt="Foto do usuário" 
+                width={50} 
+                height={50}> 
+            </Image>
         </div>
 
         <div className="secaoComentario">
@@ -16,7 +23,12 @@ const Comentario = ({fotoUsuario, nomeUsuario, comentarioUsuario}) => {
 
         <div className="secaoOpcoes">
             <button className="opcoes">
-                <img src='/tres-pontos.png' alt='Imagem de três pontos'></img>
+                <Image 
+                    src='/tres-pontos.png' 
+                    alt='Imagem de três pontos' 
+                    width={20} 
+                    height={20}>
+                </Image>
             </button>
         </div>
 
